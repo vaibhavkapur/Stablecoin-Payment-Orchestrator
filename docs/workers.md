@@ -5,16 +5,18 @@ nav_order: 10
 ---
 
 # Workers
-{: .no_toc }
+
+[Documentation home](index.md)
 
 Background processes that handle asynchronous payment execution, monitoring, and delivery.
-{: .fs-6 .fw-300 }
 
-## Table of contents
-{: .no_toc .text-delta }
+## On this page
 
-1. TOC
-{:toc}
+- [Overview](#overview)
+- [Execution Worker](#execution-worker)
+- [Confirmation Worker](#confirmation-worker)
+- [Webhook Worker](#webhook-worker)
+- [Metrics Collector](#metrics-collector)
 
 ---
 

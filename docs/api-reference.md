@@ -5,16 +5,23 @@ nav_order: 4
 ---
 
 # API Reference
-{: .no_toc }
+
+[Documentation home](index.md)
 
 Complete reference for all REST API endpoints.
-{: .fs-6 .fw-300 }
 
-## Table of contents
-{: .no_toc .text-delta }
+## On this page
 
-1. TOC
-{:toc}
+- [Base URL](#base-url)
+- [Authentication](#authentication)
+- [Quotes](#quotes)
+- [Payment Intents](#payment-intents)
+- [Route Debugging](#route-debugging)
+- [Webhooks](#webhooks)
+- [Admin Endpoints](#admin-endpoints)
+- [Health Check](#health-check)
+- [Error Format](#error-format)
+- [Payment Statuses](#payment-statuses)
 
 ---
 
@@ -116,7 +123,6 @@ curl -X POST http://localhost:3000/quotes \
 | `400` | `INVALID_PRIORITY` | Priority must be `low_fee`, `fast`, or `reliable` |
 | `401` | `UNAUTHORIZED` | Missing or invalid API key |
 
-{: .note }
 Quotes expire after **5 minutes**. Create a new quote if the previous one has expired.
 
 ---
@@ -180,7 +186,6 @@ curl -X POST http://localhost:3000/payment_intents \
 | `400` | `INSUFFICIENT_BALANCE` | Treasury has insufficient funds for this payment |
 | `401` | `UNAUTHORIZED` | Missing or invalid API key |
 
-{: .note }
 If a payment intent with the same `idempotency_key` already exists for this merchant, the existing intent is returned instead of creating a duplicate.
 
 ### Get Payment Intent
@@ -322,7 +327,6 @@ POST /webhooks/test
 
 Admin endpoints do not require authentication and are intended for internal dashboards.
 
-{: .warning }
 In production, admin endpoints should be protected behind a VPN or internal network. They are unauthenticated by default.
 
 ### Dashboard Overview

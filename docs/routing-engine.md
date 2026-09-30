@@ -5,16 +5,20 @@ nav_order: 5
 ---
 
 # Routing Engine
-{: .no_toc }
+
+[Documentation home](index.md)
 
 How the orchestrator selects the optimal blockchain for each payment.
-{: .fs-6 .fw-300 }
 
-## Table of contents
-{: .no_toc .text-delta }
+## On this page
 
-1. TOC
-{:toc}
+- [Overview](#overview)
+- [Route Selection Process](#route-selection-process)
+- [Scoring Algorithm](#scoring-algorithm)
+- [Disqualification Rules](#disqualification-rules)
+- [Health Status Derivation](#health-status-derivation)
+- [Example Scoring](#example-scoring)
+- [Debugging Routes](#debugging-routes)
 
 ---
 
@@ -85,7 +89,6 @@ The metrics collector determines health status from raw metrics:
 | **degraded** | RPC error rate > 10% OR congestion score > 50% |
 | **healthy** | All metrics within normal range |
 
-{: .note }
 `degraded` chains are still eligible for routing but will have lower reliability scores, naturally deprioritizing them.
 
 ## Example Scoring

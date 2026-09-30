@@ -5,16 +5,22 @@ nav_order: 11
 ---
 
 # Configuration Reference
-{: .no_toc }
+
+[Documentation home](index.md)
 
 All environment variables and their defaults.
-{: .fs-6 .fw-300 }
 
-## Table of contents
-{: .no_toc .text-delta }
+## On this page
 
-1. TOC
-{:toc}
+- [Database](#database)
+- [Redis](#redis)
+- [API Service](#api-service)
+- [Ethereum](#ethereum)
+- [Solana](#solana)
+- [Webhooks](#webhooks)
+- [Metrics](#metrics)
+- [Example `.env` File](#example-env-file)
+- [Docker Compose Services](#docker-compose-services)
 
 ---
 
@@ -106,7 +112,6 @@ WEBHOOK_SIGNING_SECRET=whsec_change_me
 METRICS_INTERVAL_MS=15000
 ```
 
-{: .warning }
 Never commit `.env` files with real private keys or secrets to version control. Use environment-specific secret management in production (e.g., AWS Secrets Manager, Vault, Doppler).
 
 ---

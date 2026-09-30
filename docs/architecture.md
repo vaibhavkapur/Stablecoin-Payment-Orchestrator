@@ -5,16 +5,18 @@ nav_order: 3
 ---
 
 # Architecture
-{: .no_toc }
+
+[Documentation home](index.md)
 
 A deep dive into the system design, data flow, and key architectural patterns.
-{: .fs-6 .fw-300 }
 
-## Table of contents
-{: .no_toc .text-delta }
+## On this page
 
-1. TOC
-{:toc}
+- [System Overview](#system-overview)
+- [Monorepo Structure](#monorepo-structure)
+- [Payment Lifecycle](#payment-lifecycle)
+- [Key Architectural Patterns](#key-architectural-patterns)
+- [Security Model](#security-model)
 
 ---
 
@@ -59,7 +61,7 @@ The orchestrator follows a **microservices-lite** pattern: a single API service 
 
 ## Monorepo Structure
 
-The project uses **Yarn workspaces** with **TypeScript composite builds** for cross-package type safety.
+The project uses **Node.js workspaces** (the commands in this guide use npm) with **TypeScript composite builds** for cross-package type safety.
 
 | Package | Purpose |
 |:--------|:--------|

@@ -5,31 +5,39 @@ nav_order: 2
 ---
 
 # Getting Started
-{: .no_toc }
+
+[Documentation home](index.md)
 
 Set up and run the Stablecoin Payment Orchestrator locally in under 5 minutes.
-{: .fs-6 .fw-300 }
 
-## Table of contents
-{: .no_toc .text-delta }
+## On this page
 
-1. TOC
-{:toc}
+- [Prerequisites](#prerequisites)
+- [Clone the Repository](#clone-the-repository)
+- [Install Dependencies](#install-dependencies)
+- [Start Infrastructure](#start-infrastructure)
+- [Configure Environment](#configure-environment)
+- [Run Database Migrations](#run-database-migrations)
+- [Build the Project](#build-the-project)
+- [Start the Services](#start-the-services)
+- [Verify the Setup](#verify-the-setup)
+- [Make Your First Payment](#make-your-first-payment)
+- [What's Next](#whats-next)
 
 ---
 
 ## Prerequisites
 
 - **Node.js** >= 18
-- **Yarn** (or npm)
+- **npm** (included with Node.js)
 - **Docker** and **Docker Compose** (for PostgreSQL and Redis)
 - **Git**
 
 ## Clone the Repository
 
 ```bash
-git clone https://github.com/vaibhavkapur/Payment-Orchestrator.git
-cd Payment-Orchestrator
+git clone https://github.com/vaibhavkapur/Stablecoin-Payment-Orchestrator.git
+cd Stablecoin-Payment-Orchestrator
 ```
 
 ## Install Dependencies
@@ -38,7 +46,7 @@ cd Payment-Orchestrator
 npm install
 ```
 
-This installs all dependencies across the monorepo using Yarn workspaces.
+This installs all dependencies across the monorepo using npm workspaces.
 
 ## Start Infrastructure
 
@@ -60,7 +68,7 @@ Copy the example environment file and customize:
 cp .env.example .env
 ```
 
-For local development, the defaults work out of the box with the Docker Compose setup. For blockchain integration, you'll need to provide RPC URLs and treasury private keys. See the [Configuration Reference](/Stablecoin-Payment-Orchestrator/configuration) for all options.
+For local development, the defaults work out of the box with the Docker Compose setup. For blockchain integration, you'll need to provide RPC URLs and treasury private keys. See the [Configuration Reference](configuration.md) for all options.
 
 ## Run Database Migrations
 
@@ -187,7 +195,7 @@ curl http://localhost:3000/payment_intents/pi_xyz789 \
 
 ## What's Next
 
-- [Architecture](/Stablecoin-Payment-Orchestrator/architecture) --- Understand the system design
-- [API Reference](/Stablecoin-Payment-Orchestrator/api-reference) --- Full endpoint documentation
-- [Routing Engine](/Stablecoin-Payment-Orchestrator/routing-engine) --- How chain selection works
-- [Configuration](/Stablecoin-Payment-Orchestrator/configuration) --- All environment variables
+- [Architecture](architecture.md) --- Understand the system design
+- [API Reference](api-reference.md) --- Full endpoint documentation
+- [Routing Engine](routing-engine.md) --- How chain selection works
+- [Configuration](configuration.md) --- All environment variables

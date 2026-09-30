@@ -5,16 +5,20 @@ nav_order: 8
 ---
 
 # Webhooks
-{: .no_toc }
+
+[Documentation home](index.md)
 
 Real-time event notifications delivered to merchant endpoints.
-{: .fs-6 .fw-300 }
 
-## Table of contents
-{: .no_toc .text-delta }
+## On this page
 
-1. TOC
-{:toc}
+- [Overview](#overview)
+- [Event Types](#event-types)
+- [Webhook Payload](#webhook-payload)
+- [Signature Verification](#signature-verification)
+- [Delivery & Retries](#delivery--retries)
+- [Configuration](#configuration)
+- [Testing Webhooks](#testing-webhooks)
 
 ---
 

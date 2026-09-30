@@ -5,16 +5,18 @@ nav_order: 6
 ---
 
 # Chain Adapters
-{: .no_toc }
+
+[Documentation home](index.md)
 
 Blockchain-specific implementations for transaction execution and health monitoring.
-{: .fs-6 .fw-300 }
 
-## Table of contents
-{: .no_toc .text-delta }
+## On this page
 
-1. TOC
-{:toc}
+- [Overview](#overview)
+- [ChainAdapter Interface](#chainadapter-interface)
+- [Ethereum Adapter](#ethereum-adapter)
+- [Solana Adapter](#solana-adapter)
+- [Adding a New Chain](#adding-a-new-chain)
 
 ---
 

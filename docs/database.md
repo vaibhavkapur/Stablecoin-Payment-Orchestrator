@@ -5,16 +5,15 @@ nav_order: 9
 ---
 
 # Database Schema
-{: .no_toc }
+
+[Documentation home](index.md)
 
 PostgreSQL schema reference for all tables, indexes, and relationships.
-{: .fs-6 .fw-300 }
 
-## Table of contents
-{: .no_toc .text-delta }
+## On this page
 
-1. TOC
-{:toc}
+- [Entity Relationship](#entity-relationship)
+- [Tables](#tables)
 
 ---
 

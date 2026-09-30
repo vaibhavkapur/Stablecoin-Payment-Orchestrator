@@ -1,12 +1,19 @@
 # Stablecoin Payment Orchestrator
 
-A custodial payment orchestrator that accepts merchant payment requests in USD and dynamically routes USDC transfers across Ethereum and Solana based on cost, latency, and reliability.
+A custodial payment orchestrator that accepts merchant requests in USD and routes USDC transfers across Ethereum and Solana using cost, latency, and reliability scores.
 
-> **[Read the full documentation](https://vaibhavkapur22.github.io/Stablecoin-Payment-Orchestrator/)**
+> **[Read the full documentation](docs/index.md)**
+
+TypeScript / Fastify / BullMQ, with PostgreSQL and Redis. Ethereum and Solana adapters submit transactions when configured with RPC endpoints and funded treasury keys; fee estimates include fixed price assumptions and fallbacks.
 
 ## Getting Started
 
+See the [Getting Started guide](docs/getting-started.md) for prerequisites and configuration.
+
 ```bash
+# Configure environment (RPC endpoints and treasury keys for execution)
+cp .env.example .env
+
 # Start Postgres & Redis
 docker compose -f infra/docker/docker-compose.yml up -d
 
@@ -23,6 +30,8 @@ npm run dev:worker
 ```
 
 ## Quick Example
+
+Replace destination addresses with recipients on your configured networks and `quo_...` with the returned quote ID. Creating a payment intent queues execution through the chain adapters.
 
 ```bash
 # Create a quote

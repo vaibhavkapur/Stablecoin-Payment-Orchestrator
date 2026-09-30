@@ -1,25 +1,35 @@
 ---
 title: Home
-layout: home
+layout: default
 nav_order: 1
 ---
 
 # Stablecoin Payment Orchestrator
-{: .fs-9 }
 
-A custodial payment orchestrator that accepts merchant payment requests in USD and dynamically routes USDC transfers across Ethereum and Solana based on cost, latency, and reliability.
-{: .fs-6 .fw-300 }
+A custodial payment orchestrator that accepts merchant requests in USD and routes USDC transfers across Ethereum and Solana using cost, latency, and reliability scores.
 
-[Get Started](/Stablecoin-Payment-Orchestrator/getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[API Reference](/Stablecoin-Payment-Orchestrator/api-reference){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Get Started](getting-started.md) · [API Reference](api-reference.md) · [Repository README](https://github.com/vaibhavkapur/Stablecoin-Payment-Orchestrator/blob/main/README.md)
 
----
+## Documentation
+
+- [Getting Started](getting-started.md)
+- [Architecture](architecture.md)
+- [API Reference](api-reference.md)
+- [Configuration Reference](configuration.md)
+- [Database Schema](database.md)
+- [Testing](testing.md)
+- [Deployment Guide](deployment.md)
+- [Routing Engine](routing-engine.md)
+- [Chain Adapters](chain-adapters.md)
+- [Ledger System](ledger.md)
+- [Webhooks](webhooks.md)
+- [Workers](workers.md)
 
 ## Overview
 
-The Stablecoin Payment Orchestrator is a production-grade backend system that enables merchants to accept USDC payments across multiple blockchains through a single API. The orchestrator handles chain selection, transaction execution, confirmation monitoring, and webhook delivery.
+The Stablecoin Payment Orchestrator is a backend implementation that enables merchants to accept USDC payments across multiple blockchains through a single API. The orchestrator handles chain selection, transaction execution, confirmation monitoring, and webhook delivery.
 
-### Key Features
+## Key Features
 
 - **Multi-chain routing** --- Automatically selects the optimal blockchain (Ethereum or Solana) based on real-time metrics
 - **Priority-based scoring** --- Supports `low_fee`, `fast`, and `reliable` routing priorities with configurable weight profiles
@@ -30,7 +40,7 @@ The Stablecoin Payment Orchestrator is a production-grade backend system that en
 - **Webhook delivery** --- HMAC-signed webhook notifications with automatic retries
 - **Admin dashboard API** --- Analytics endpoints for payment stats, route distribution, and failure analysis
 
-### Architecture at a Glance
+## Architecture at a Glance
 
 ```
 Merchant API Request
@@ -51,7 +61,9 @@ Merchant API Request
   (ETH / SOL)     DB
 ```
 
-### Tech Stack
+## Tech Stack and Scope
+
+TypeScript / Fastify / BullMQ, with PostgreSQL and Redis. Ethereum and Solana adapters submit transactions when configured with RPC endpoints and funded treasury keys; fee estimates include fixed price assumptions and fallbacks.
 
 | Component | Technology |
 |:----------|:-----------|
@@ -62,12 +74,12 @@ Merchant API Request
 | Cache / Queue | Redis 7 |
 | Ethereum | ethers.js |
 | Solana | @solana/web3.js |
-| Monorepo | Yarn Workspaces |
+| Monorepo | Node.js workspaces (npm commands) |
 
-### Project Structure
+## Project Structure
 
 ```
-Payment Orchestrator/
+Stablecoin-Payment-Orchestrator/
 ├── packages/
 │   ├── common/            # Shared types, DB/Redis clients, utilities
 │   ├── routing-engine/    # Route selection & scoring algorithm
@@ -81,3 +93,13 @@ Payment Orchestrator/
 │   └── docker/            # Docker Compose (Postgres + Redis)
 └── .env.example           # Environment variable template
 ```
+
+## Related projects
+
+These are independent companion repositories. The links describe related work, not implemented runtime integrations:
+
+- [Agent Authorization Wallet + Merchant Trust Gateway](https://github.com/vaibhavkapur/Agent-Authorization-Wallet-Merchant-Trust-Gateway): purchase authorization, merchant verification, and execution evidence.
+- [Agent Services Marketplace](https://github.com/vaibhavkapur/Agent-Services-Marketplace): service discovery, quotes, and agent purchase workflows.
+- [Agentic Commerce Protocol Test Lab](https://github.com/vaibhavkapur/Agentic-Commerce-Protocol-Test-Lab): protocol fixtures, scenarios, and conformance checks.
+- [Autonomous Price Watch Buyer](https://github.com/vaibhavkapur/Autonomous-Price-Watch-Buyer): price monitoring and bounded purchase decisions.
+- [Cross-Merchant Procurement Agent](https://github.com/vaibhavkapur/Cross-Merchant-Procurement-Agent): merchant comparison and procurement planning.

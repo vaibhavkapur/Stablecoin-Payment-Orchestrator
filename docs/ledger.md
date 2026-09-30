@@ -5,16 +5,19 @@ nav_order: 7
 ---
 
 # Ledger System
-{: .no_toc }
+
+[Documentation home](index.md)
 
 Double-entry accounting for treasury balance tracking and auditability.
-{: .fs-6 .fw-300 }
 
-## Table of contents
-{: .no_toc .text-delta }
+## On this page
 
-1. TOC
-{:toc}
+- [Overview](#overview)
+- [Entry Types](#entry-types)
+- [Ledger Entry Schema](#ledger-entry-schema)
+- [Lifecycle Example](#lifecycle-example)
+- [API Functions](#api-functions)
+- [Treasury Balance Model](#treasury-balance-model)
 
 ---
 

@@ -5,16 +5,20 @@ nav_order: 12
 ---
 
 # Deployment Guide
-{: .no_toc }
+
+[Documentation home](index.md)
 
 Deploying the orchestrator to production environments.
-{: .fs-6 .fw-300 }
 
-## Table of contents
-{: .no_toc .text-delta }
+## On this page
 
-1. TOC
-{:toc}
+- [Prerequisites](#prerequisites)
+- [Build for Production](#build-for-production)
+- [Run the Services](#run-the-services)
+- [Infrastructure Requirements](#infrastructure-requirements)
+- [Production Checklist](#production-checklist)
+- [Scaling Considerations](#scaling-considerations)
+- [Monitoring](#monitoring)
 
 ---
 
